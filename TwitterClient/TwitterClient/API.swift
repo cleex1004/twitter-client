@@ -59,6 +59,12 @@ class API {
                         let user = User(json: userJSON)
                         callback(user)
                     } //abstract it out for lab
+                case 400...499:
+                    print("Client Error: response came back with statusCode: \(response.statusCode)")
+                    callback(nil)
+                case 500...599:
+                    print("Server Error: reponse came back with statusCode: \(response.statusCode)")
+                    callback(nil)
                 default:
                     print("Error: response came back with statusCode: \(response.statusCode)")
                     callback(nil)
@@ -85,16 +91,34 @@ class API {
 //                }
                 guard let data = data else { callback(nil); return }
                 
-                if response.statusCode >= 200 && response.statusCode < 300 { //same as switch above
+                switch response.statusCode {
+                case 200...299:
                     JSONParser.tweetsFrom(data: data, callback: { (success, tweets) in
                         if success {
                             callback(tweets)
                         }
                     })
-                } else {
-                    print("Something else went terribly wrong! We have a status code outside 200-299.")
+                case 400...499:
+                    print("Client Error: response came back with statusCode: \(response.statusCode)")
+                    callback(nil)
+                case 500...599:
+                    print("Server Error: reponse came back with statusCode: \(response.statusCode)")
+                    callback(nil)
+                default:
+                    print("Error: response came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 }
+                
+//                if response.statusCode >= 200 && response.statusCode < 300 { //same as switch above
+//                    JSONParser.tweetsFrom(data: data, callback: { (success, tweets) in
+//                        if success {
+//                            callback(tweets)
+//                        }
+//                    })
+//                } else {
+//                    print("Something else went terribly wrong! We have a status code outside 200-299.")
+//                    callback(nil)
+//                }
             })
         }
     }

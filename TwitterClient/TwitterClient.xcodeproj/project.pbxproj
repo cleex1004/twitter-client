@@ -138,6 +138,7 @@
 				TargetAttributes = {
 					BCB9BA4F1E803F3E0077D821 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AYB4L38F4S;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -308,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AYB4L38F4S;
 				INFOPLIST_FILE = TwitterClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christinalee.TwitterClient;
@@ -320,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AYB4L38F4S;
 				INFOPLIST_FILE = TwitterClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christinalee.TwitterClient;
