@@ -64,17 +64,11 @@
 		BCB9BA521E803F3F0077D821 /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+				BCB9BA531E803F3F0077D821 /* AppDelegate.swift */,
 				BCB9BA711E8088BB0077D821 /* controller */,
 				BCB9BA701E8088A00077D821 /* view */,
-				BCB9BA531E803F3F0077D821 /* AppDelegate.swift */,
-				BCB9BA671E8054560077D821 /* User.swift */,
-				BCB9BA691E8054960077D821 /* Tweet.swift */,
-				BCB9BA721E8092350077D821 /* Tweets.swift */,
-				BCB9BA6B1E806D540077D821 /* JSONParser.swift */,
-				BCB9BA571E803F3F0077D821 /* Main.storyboard */,
 				BCB9BA6F1E8088940077D821 /* model */,
 				BCB9BA5A1E803F3F0077D821 /* Assets.xcassets */,
-				BCB9BA5C1E803F3F0077D821 /* LaunchScreen.storyboard */,
 				BCB9BA5F1E803F3F0077D821 /* Info.plist */,
 			);
 			path = TwitterClient;
@@ -83,6 +77,10 @@
 		BCB9BA6F1E8088940077D821 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				BCB9BA721E8092350077D821 /* Tweets.swift */,
+				BCB9BA6B1E806D540077D821 /* JSONParser.swift */,
+				BCB9BA691E8054960077D821 /* Tweet.swift */,
+				BCB9BA671E8054560077D821 /* User.swift */,
 				BCB9BA651E8052AE0077D821 /* tweet.json */,
 			);
 			name = model;
@@ -91,6 +89,8 @@
 		BCB9BA701E8088A00077D821 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				BCB9BA571E803F3F0077D821 /* Main.storyboard */,
+				BCB9BA5C1E803F3F0077D821 /* LaunchScreen.storyboard */,
 			);
 			name = view;
 			sourceTree = "<group>";
