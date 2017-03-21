@@ -23,6 +23,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         JSONParser.tweetsFrom(data: JSONParser.sampleJSONData) { (success, tweets) in
             if(success){
                 guard let tweets = tweets else { fatalError("Tweets came back nil") }
+                Tweets.shared.removeAll()
                 for tweet in tweets {
                     print(tweet.text)
                     Tweets.shared.add(tweet: tweet)
