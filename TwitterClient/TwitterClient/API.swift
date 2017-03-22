@@ -11,8 +11,8 @@ import Accounts
 import Social
 
 typealias AccountCallback = (ACAccount?) -> () //might need to be plural for lab
-typealias UserCallback = (User?) -> ()
-typealias TweetsCallback = ([Tweet]?) -> ()
+//typealias UserCallback = (User?) -> ()
+//typealias TweetsCallback = ([Tweet]?) -> ()
 
 class API {
     static let shared = API()
