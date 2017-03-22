@@ -29,7 +29,7 @@ class API {
                 return
             }
             if success {
-                if let account = accountStore.accounts(with: accountType).first as? ACAccount { //casting to let as ACAccount type
+                if let account = accountStore.accounts(with: accountType).first as? ACAccount { //as? -casting to let as ACAccount type
                     callback(account)
                 }
             } else {
