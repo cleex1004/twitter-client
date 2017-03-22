@@ -19,7 +19,7 @@ class API {
     
     var account : ACAccount?
     
-    private func login(callback: @escaping AccountCallback) { //can escape scope-@escaping-to pass data back
+    private func login(callback: @escaping AccountCallback) { //can escape scope-@escaping-to pass data back-kept in memory
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
         accountStore.requestAccessToAccounts(with: accountType, options: nil) { (success, error) in
