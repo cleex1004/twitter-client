@@ -55,10 +55,11 @@ class API {
                 
                 switch response.statusCode {
                 case 200...299:
-                    if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] { //try! refactor to do-try-catch for lab
-                        let user = User(json: userJSON)
-                        callback(user)
-                    } //abstract it out for lab
+                    JSONParser.userFrom(data: data, callback: { (success, user) in
+                        if success {
+                            callback(user)
+                        }
+                    })
                 case 400...499:
                     print("Client Error: response came back with statusCode: \(response.statusCode)")
                     callback(nil)
