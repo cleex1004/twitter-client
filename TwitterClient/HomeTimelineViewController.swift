@@ -23,6 +23,8 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         updateTimeline()
         
 //        JSONParser.tweetsFrom(data: JSONParser.sampleJSONData) { (success, tweets) in
@@ -50,10 +52,14 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let currentTweet = dataSource[indexPath.row]
         
-        cell.textLabel?.text = currentTweet.text
-        cell.detailTextLabel?.text = currentTweet.user?.name
+        if let cell = cell as? TweetCell {
+            cell.tweetText.text = dataSource[indexPath.row].text
+        }
+        //let currentTweet = dataSource[indexPath.row]
+        
+        //cell.textLabel?.text = currentTweet.text
+        //cell.detailTextLabel?.text = currentTweet.user?.name
 
         return cell
     }
