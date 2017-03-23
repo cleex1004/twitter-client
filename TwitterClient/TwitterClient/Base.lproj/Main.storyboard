@@ -29,7 +29,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="173"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TPo-Db-yV7">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_1188" translatesAutoresizingMaskIntoConstraints="NO" id="TPo-Db-yV7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="173"/>
                                         </imageView>
                                     </subviews>
@@ -50,7 +50,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujg-Tl-V2h">
-                                                    <rect key="frame" x="0.0" y="8" width="375" height="28"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="28"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -58,14 +58,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Ujg-Tl-V2h" secondAttribute="bottom" constant="8" id="qgK-9Z-Lgp"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ujg-Tl-V2h" secondAttribute="trailing" id="uWC-Lm-Hrf"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ujg-Tl-V2h" secondAttribute="trailing" constant="8" id="uWC-Lm-Hrf"/>
                                                 <constraint firstItem="Ujg-Tl-V2h" firstAttribute="top" secondItem="Fbc-v1-Iii" secondAttribute="top" constant="8" id="uX5-p2-brl"/>
-                                                <constraint firstItem="Ujg-Tl-V2h" firstAttribute="leading" secondItem="Fbc-v1-Iii" secondAttribute="leading" id="yK3-fv-V85"/>
+                                                <constraint firstItem="Ujg-Tl-V2h" firstAttribute="leading" secondItem="Fbc-v1-Iii" secondAttribute="leading" constant="8" id="yK3-fv-V85"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tweetText" destination="Ujg-Tl-V2h" id="DmI-nx-SB4"/>
-                                            <segue destination="AOc-Ph-Fay" kind="show" identifier="showDetailSegue" id="lgH-Iz-wGn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -103,6 +102,7 @@
                         <outlet property="activityIndicator" destination="eoC-ce-vOo" id="jbC-91-qBN"/>
                         <outlet property="profileButton" destination="NKm-RS-rd1" id="ceC-HB-ECK"/>
                         <outlet property="tableView" destination="hF3-Ti-Cgo" id="6wj-IO-HrQ"/>
+                        <segue destination="AOc-Ph-Fay" kind="show" identifier="TweetDetailViewController" id="JVu-dB-bKz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -237,6 +237,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="1728" height="1152"/>
+        <image name="IMG_1188" width="1728" height="1152"/>
     </resources>
 </document>

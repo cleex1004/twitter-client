@@ -30,8 +30,12 @@ class ProfileViewController: UIViewController {
                 self.user = user
                 print(self.user)
                 self.userNameLabel.text = "The Users Name is: \(user!.name)"
-                self.userLocationLabel.text = "The Users Location is: \(user!.location)"
                 self.userScreenNameLabel.text = "The Users ScreenName is: \(user!.screenName)"
+                if user!.location != "" {
+                    self.userLocationLabel.text = "The Users Location is: \(user!.location)"
+                } else {
+                    self.userLocationLabel.text = "The Users Location is: Unknown"
+                }
             }
         }
         

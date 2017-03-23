@@ -22,6 +22,8 @@
 		BCB9BA6E1E8078190077D821 /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9BA6D1E8078190077D821 /* HomeTimelineViewController.swift */; };
 		BCB9BA731E8092350077D821 /* Tweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9BA721E8092350077D821 /* Tweets.swift */; };
 		BCE693001E844DEF00A0E81B /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE692FF1E844DEF00A0E81B /* UIExtensions.swift */; };
+		BCE693031E8467D500A0E81B /* TweetNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE693011E8467D500A0E81B /* TweetNibCell.swift */; };
+		BCE693041E8467D500A0E81B /* TweetNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE693021E8467D500A0E81B /* TweetNibCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		BCB9BA6D1E8078190077D821 /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTimelineViewController.swift; path = ../HomeTimelineViewController.swift; sourceTree = "<group>"; };
 		BCB9BA721E8092350077D821 /* Tweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
 		BCE692FF1E844DEF00A0E81B /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		BCE693011E8467D500A0E81B /* TweetNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetNibCell.swift; sourceTree = "<group>"; };
+		BCE693021E8467D500A0E81B /* TweetNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetNibCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		BCB9BA701E8088A00077D821 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				BCE693011E8467D500A0E81B /* TweetNibCell.swift */,
+				BCE693021E8467D500A0E81B /* TweetNibCell.xib */,
 				BCB9BA571E803F3F0077D821 /* Main.storyboard */,
 				BC8DC1611E82F9E900C4193B /* TweetCell.swift */,
 				BCB9BA5C1E803F3F0077D821 /* LaunchScreen.storyboard */,
@@ -178,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE693041E8467D500A0E81B /* TweetNibCell.xib in Resources */,
 				BCB9BA5E1E803F3F0077D821 /* LaunchScreen.storyboard in Resources */,
 				BCB9BA5B1E803F3F0077D821 /* Assets.xcassets in Resources */,
 				BCB9BA591E803F3F0077D821 /* Main.storyboard in Resources */,
@@ -199,6 +206,7 @@
 				BCB9BA681E8054560077D821 /* User.swift in Sources */,
 				BCE693001E844DEF00A0E81B /* UIExtensions.swift in Sources */,
 				BC8DC1621E82F9E900C4193B /* TweetCell.swift in Sources */,
+				BCE693031E8467D500A0E81B /* TweetNibCell.swift in Sources */,
 				BCB9BA731E8092350077D821 /* Tweets.swift in Sources */,
 				BCB9BA6A1E8054960077D821 /* Tweet.swift in Sources */,
 				BCB9BA6E1E8078190077D821 /* HomeTimelineViewController.swift in Sources */,

@@ -27,10 +27,12 @@ class TweetDetailViewController: UIViewController {
         
         self.userLabel.text = self.tweet.user?.name ?? "Unknown"
         self.tweetLabel.text = self.tweet.text
-        if self.tweet.retweet != 0 {
-            self.retweetLabel.text = "This tweet is a retweet"
-        } else {
-            self.retweetLabel.text = "This tweet is not a retweet"
-        }
+        self.retweetLabel.text = "This tweet has been retweeted \(self.tweet.retweet) times"
+        
+//        if self.tweet.retweet != 0 {
+//            self.retweetLabel.text = "This tweet is a retweet"
+//        } else {
+//            self.retweetLabel.text = "This tweet is not a retweet"
+//        }
     }
 }
