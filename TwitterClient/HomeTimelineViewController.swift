@@ -48,7 +48,6 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateTimeline()
-        //getUser()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

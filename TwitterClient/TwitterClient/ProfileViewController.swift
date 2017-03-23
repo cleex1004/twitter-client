@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var userLocationLabel: UILabel!
     
+    @IBOutlet weak var userScreenNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("this kinda works")
@@ -26,11 +28,15 @@ class ProfileViewController: UIViewController {
         API.shared.getUserInfo { (user) in
             OperationQueue.main.addOperation {
                 self.user = user
-                self.userNameLabel.text = user?.name
-                self.userLocationLabel.text = user?.location
+                print(self.user)
+                self.userNameLabel.text = "The Users Name is: \(user!.name)"
+                self.userLocationLabel.text = "The Users Location is: \(user!.location)"
+                self.userScreenNameLabel.text = "The Users ScreenName is: \(user!.screenName)"
             }
         }
         
     }
 
 }
+
+
