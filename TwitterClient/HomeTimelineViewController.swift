@@ -20,6 +20,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var profileButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        updateTimeline()
-        
+        //getUser()
 //        JSONParser.tweetsFrom(data: JSONParser.sampleJSONData) { (success, tweets) in
 //            if(success){
 //                guard let tweets = tweets else { fatalError("Tweets came back nil") }
@@ -45,9 +45,14 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
 //        }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateTimeline()
+        //getUser()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        
         
         if segue.identifier == "showDetailSegue" {
             if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
@@ -57,6 +62,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
                 destinationController.tweet = selectedTweet
             }
             
+        }
+        
+        if segue.identifier == "showProfileSegue" {
+            guard segue.destination is ProfileViewController else { return }
         }
     }
     
@@ -68,13 +77,18 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
                 self.dataSource = tweets ?? [] //nil coalescing
                 self.activityIndicator.stopAnimating()
             }
-//            API.shared.getOAuthUser(callback: {(user) in
-//                OperationQueue.main.addOperation {
-//                    print("user location: \(user?.location)")
-//                }
-//            })
+            
         }
     }
+    
+//    func getUser() {
+//        API.shared.getUserInfo { (user) in
+//            OperationQueue.main.addOperation {
+//                self.user.append(user!)
+//            }
+//        }
+//
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
