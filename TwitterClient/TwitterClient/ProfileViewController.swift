@@ -20,10 +20,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         print("this kinda works")
         getUser()
-//        self.userNameLabel.text = user.name
-//        self.userLocationLabel.text = user.location
-
     }
+    
     func getUser() {
         API.shared.getUserInfo { (user) in
             OperationQueue.main.addOperation {
