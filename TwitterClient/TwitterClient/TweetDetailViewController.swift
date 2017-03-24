@@ -22,10 +22,9 @@ class TweetDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.tweet.user?.name ?? "Unknown") //nil coalescing
-        print(self.tweet.text)
-        print(self.tweet.retweet)
-        //do stuff in lab
+        //print(self.tweet.user?.name ?? "Unknown") //nil coalescing
+        //print(self.tweet.text)
+        //print(self.tweet.retweet)
         
         self.userLabel.text = self.tweet.user?.name ?? "Unknown"
         self.tweetLabel.text = self.tweet.text
@@ -45,17 +44,4 @@ class TweetDetailViewController: UIViewController {
         
     }
 }
-
-//var tweet: Tweet! {
-//didSet {
-//    self.tweetLabel.text = tweet.text
-//    self.userNameLabel.text = tweet.user?.name ?? "Unknown User"
-//    
-//    if let user = tweet.user {
-//        UIImage.fetchImageWidth(user.profileImageURL) { (image) in
-//            self.userImageView.image = image
-//        }
-//    }
-//}
-//}
 

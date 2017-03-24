@@ -13,7 +13,7 @@ class ViewFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     var tweet : Tweet!
     
     var dataSource = [Tweet]() {
-        didSet { //property observer
+        didSet {
             self.tableView.reloadData()
         }
     }
@@ -31,15 +31,29 @@ class ViewFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         if let screenName = self.tweet.user?.screenName{
-            print(screenName)
+            //print(screenName)
             getFeed(screenName)
         }
-        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil) //nil is same as bundle.main
+        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil) 
         self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
         
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == TweetDetailViewController.identifier {
+            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+                let selectedTweet = self.dataSource[selectedIndex]
+                
+                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
+                destinationController.tweet = selectedTweet
+            }
+            
+        }
     }
     
     func getFeed(_ screenName: String) {
@@ -48,7 +62,6 @@ class ViewFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             OperationQueue.main.addOperation {
                 self.dataSource = tweets ?? []
                 self.activityIndicator.stopAnimating()
-                print(self.dataSource)
             }
         }
     }
@@ -63,5 +76,9 @@ class ViewFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let tweet = self.dataSource[indexPath.row]
         cell.tweet = tweet
          return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: TweetDetailViewController.identifier, sender: nil)
     }
 }

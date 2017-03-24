@@ -30,7 +30,7 @@ class API {
             }
             if success {
                 if let account = accountStore.accounts(with: accountType).first as? ACAccount { //as? -casting to let as ACAccount type
-                    print(account)
+                    //print(account)
                     callback(account)
                 }
             } else {
@@ -65,10 +65,10 @@ class API {
                     print("Client Error: oauth response came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 case 500...599:
-                    print("Server Error: reponse came back with statusCode: \(response.statusCode)")
+                    print("Server Error: oauth reponse came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 default:
-                    print("Error: response came back with statusCode: \(response.statusCode)")
+                    print("Error: oauth response came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 }
             })
@@ -104,10 +104,10 @@ class API {
                     print("Client Error: timeline response came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 case 500...599:
-                    print("Server Error: reponse came back with statusCode: \(response.statusCode)")
+                    print("Server Error: timeline reponse came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 default:
-                    print("Error: response came back with statusCode: \(response.statusCode)")
+                    print("Error: timeline response came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 }
                 

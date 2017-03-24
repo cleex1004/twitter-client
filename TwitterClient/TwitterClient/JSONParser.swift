@@ -52,9 +52,3 @@ class JSONParser{
         }
     }
 }
-
-
-//if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] { //try! refactor to do-try-catch for lab
-//    let user = User(json: userJSON)
-//    callback(user)
-//} //abstract it out for lab
