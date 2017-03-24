@@ -28,11 +28,15 @@ class TweetDetailViewController: UIViewController {
         self.userLabel.text = self.tweet.user?.name ?? "Unknown"
         self.tweetLabel.text = self.tweet.text
         self.retweetLabel.text = "This tweet has been retweeted \(self.tweet.retweet) times"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         
-//        if self.tweet.retweet != 0 {
-//            self.retweetLabel.text = "This tweet is a retweet"
-//        } else {
-//            self.retweetLabel.text = "This tweet is not a retweet"
-//        }
+        if segue.identifier == ViewFeedViewController.identifier {
+            guard let destinationController = segue.destination as? ViewFeedViewController else { return }
+            destinationController.tweet = self.tweet
+        }
+        
     }
 }

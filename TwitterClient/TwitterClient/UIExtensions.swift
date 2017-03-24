@@ -20,6 +20,10 @@ extension UIImage {
                 OperationQueue.main.addOperation {
                     callback(image)
                 }
+            } else {
+                OperationQueue.main.addOperation {
+                    callback(nil)
+                }
             }
         }
     }

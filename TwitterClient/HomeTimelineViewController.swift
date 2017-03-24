@@ -30,6 +30,8 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+        updateTimeline()
+        
         let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil) //nil is same as bundle.main
         self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
         
@@ -50,10 +52,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
 //        }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateTimeline()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        updateTimeline()
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

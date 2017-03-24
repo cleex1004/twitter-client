@@ -10,7 +10,7 @@ import Foundation
 import Accounts
 import Social
 
-typealias AccountCallback = (ACAccount?) -> () //might need to be plural for lab
+typealias AccountCallback = (ACAccount?) -> () 
 typealias UserCallback = (User?) -> ()
 typealias TweetsCallback = ([Tweet]?) -> ()
 
@@ -157,37 +157,3 @@ class API {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
