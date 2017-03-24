@@ -48,7 +48,7 @@ class JSONParser{
             }
         } catch {
             print("Error Serializing JSON")
-            callback(false, nil)
+            return
         }
     }
 }

@@ -19,7 +19,7 @@ class API {
     
     var account : ACAccount?
     
-    private func login(callback: @escaping AccountCallback) { //can escape scope-@escaping-to pass data back
+    private func login(callback: @escaping AccountCallback) { //can escape scope-@escaping-to pass data back-kept in memory
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
         accountStore.requestAccessToAccounts(with: accountType, options: nil) { (success, error) in
@@ -29,7 +29,8 @@ class API {
                 return
             }
             if success {
-                if let account = accountStore.accounts(with: accountType).first as? ACAccount { //casting to let as ACAccount type
+                if let account = accountStore.accounts(with: accountType).first as? ACAccount { //as? -casting to let as ACAccount type
+                    print(account)
                     callback(account)
                 }
             } else {
@@ -61,7 +62,7 @@ class API {
                         }
                     })
                 case 400...499:
-                    print("Client Error: response came back with statusCode: \(response.statusCode)")
+                    print("Client Error: oauth response came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 case 500...599:
                     print("Server Error: reponse came back with statusCode: \(response.statusCode)")
@@ -100,7 +101,7 @@ class API {
                         }
                     })
                 case 400...499:
-                    print("Client Error: response came back with statusCode: \(response.statusCode)")
+                    print("Client Error: timeline response came back with statusCode: \(response.statusCode)")
                     callback(nil)
                 case 500...599:
                     print("Server Error: reponse came back with statusCode: \(response.statusCode)")
@@ -134,7 +135,6 @@ class API {
                     })
                 }
             })
-            
         } else {
             self.updateTimeLine(callback: { (tweets) in
                 callback(tweets)
@@ -142,7 +142,14 @@ class API {
 //            self.updateTimeLine(callback: callback) //same as line above
         }
     }
+    
+    func getUserInfo(callback: @escaping UserCallback) {
+        self.getOAuthUser(callback: { (user) in
+            callback(user)
+        })
+    }
 }
+
 
 
 
