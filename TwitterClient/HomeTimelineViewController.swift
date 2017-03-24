@@ -20,7 +20,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var profileButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()

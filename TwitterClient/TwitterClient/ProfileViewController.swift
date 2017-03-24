@@ -12,6 +12,8 @@ class ProfileViewController: UIViewController {
     
     var user : User!
 
+    @IBOutlet weak var profileImage: UIImageView!
+    
     @IBOutlet weak var userNameLabel: UILabel!
     
     @IBOutlet weak var userLocationLabel: UILabel!
@@ -29,6 +31,9 @@ class ProfileViewController: UIViewController {
             OperationQueue.main.addOperation {
                 self.user = user
                 print(self.user)
+                UIImage.fetchImageWidth((self.user?.profileImageURL)!, callback: { (image) in
+                    self.profileImage.image = image
+                })
                 self.userNameLabel.text = "The Users Name is: \(user!.name)"
                 self.userScreenNameLabel.text = "The Users ScreenName is: \(user!.screenName)"
                 if user!.location != "" {
@@ -42,5 +47,6 @@ class ProfileViewController: UIViewController {
     }
 
 }
+
 
 
