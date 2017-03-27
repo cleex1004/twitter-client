@@ -12,9 +12,13 @@ class ProfileViewController: UIViewController {
     
     var user : User!
 
+    @IBOutlet weak var profileImage: UIImageView!
+    
     @IBOutlet weak var userNameLabel: UILabel!
     
     @IBOutlet weak var userLocationLabel: UILabel!
+    
+    @IBOutlet weak var userScreenNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +30,23 @@ class ProfileViewController: UIViewController {
         API.shared.getUserInfo { (user) in
             OperationQueue.main.addOperation {
                 self.user = user
-                self.userNameLabel.text = user?.name
-                self.userLocationLabel.text = user?.location
+                print(self.user)
+                UIImage.fetchImageWidth((self.user?.profileImageURL)!, callback: { (image) in
+                    self.profileImage.image = image
+                })
+                self.userNameLabel.text = "The Users Name is: \(user!.name)"
+                self.userScreenNameLabel.text = "The Users ScreenName is: \(user!.screenName)"
+                if user!.location != "" {
+                    self.userLocationLabel.text = "The Users Location is: \(user!.location)"
+                } else {
+                    self.userLocationLabel.text = "The Users Location is: Unknown"
+                }
             }
         }
         
     }
 
 }
+
+
+

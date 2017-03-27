@@ -16,6 +16,8 @@ class TweetDetailViewController: UIViewController {
     
     @IBOutlet weak var retweetLabel: UILabel!
     
+    @IBOutlet weak var userImage: UIImageView!
+    
     var tweet : Tweet!
     
     override func viewDidLoad() {
@@ -27,10 +29,33 @@ class TweetDetailViewController: UIViewController {
         
         self.userLabel.text = self.tweet.user?.name ?? "Unknown"
         self.tweetLabel.text = self.tweet.text
-        if self.tweet.retweet != 0 {
-            self.retweetLabel.text = "This tweet is a retweet"
-        } else {
-            self.retweetLabel.text = "This tweet is not a retweet"
+        self.retweetLabel.text = "This tweet has been retweeted \(self.tweet.retweet) times"
+        UIImage.fetchImageWidth((self.tweet.user?.profileImageURL)!) { (image) in
+            self.userImage.image = image
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == ViewFeedViewController.identifier {
+            guard let destinationController = segue.destination as? ViewFeedViewController else { return }
+            destinationController.tweet = self.tweet
+        }
+        
+    }
 }
+
+//var tweet: Tweet! {
+//didSet {
+//    self.tweetLabel.text = tweet.text
+//    self.userNameLabel.text = tweet.user?.name ?? "Unknown User"
+//    
+//    if let user = tweet.user {
+//        UIImage.fetchImageWidth(user.profileImageURL) { (image) in
+//            self.userImageView.image = image
+//        }
+//    }
+//}
+//}
+
