@@ -215,6 +215,7 @@
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c8m-4C-Kmh">
                                 <rect key="frame" x="0.0" y="32" width="375" height="603"/>
+                                <color key="tintColor" red="0.1306838736" green="0.24137155339999999" blue="0.58553270729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
@@ -329,6 +330,6 @@
         <image name="IMG_1188" width="1728" height="1152"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JVu-dB-bKz"/>
+        <segue reference="zQY-na-o71"/>
     </inferredMetricsTieBreakers>
 </document>
