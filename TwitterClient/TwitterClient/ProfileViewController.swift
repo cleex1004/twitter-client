@@ -22,7 +22,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("this kinda works")
         getUser()
     }
     
@@ -34,12 +33,12 @@ class ProfileViewController: UIViewController {
                 UIImage.fetchImageWidth((self.user?.profileImageURL)!, callback: { (image) in
                     self.profileImage.image = image
                 })
-                self.userNameLabel.text = "The Users Name is: \(user!.name)"
-                self.userScreenNameLabel.text = "The Users ScreenName is: \(user!.screenName)"
+                self.userNameLabel.text = "Name: \(user!.name)"
+                self.userScreenNameLabel.text = "ScreenName: \(user!.screenName)"
                 if user!.location != "" {
-                    self.userLocationLabel.text = "The Users Location is: \(user!.location)"
+                    self.userLocationLabel.text = "Location: \(user!.location)"
                 } else {
-                    self.userLocationLabel.text = "The Users Location is: Unknown"
+                    self.userLocationLabel.text = "Location: Unknown"
                 }
             }
         }

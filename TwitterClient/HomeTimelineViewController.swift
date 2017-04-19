@@ -89,15 +89,6 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
-//    func getUser() {
-//        API.shared.getUserInfo { (user) in
-//            OperationQueue.main.addOperation {
-//                self.user.append(user!)
-//            }
-//        }
-//
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -121,6 +112,5 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: TweetDetailViewController.identifier, sender: nil)
-        //print(indexPath.row)
     }
 }
